@@ -52,8 +52,13 @@ Ouvrir http://localhost:8081 — identifiants dans `mongo-express-app/config.env
 
 ## Variables
 
-- Backend : MongoDB `mongodb://localhost:27017/bibliotheque`
-- Frontend en dev : proxy Vite vers l’API (`/api` → `localhost:3000`)
+- **Local** : `MONGODB_URI` optionnelle, défaut `mongodb://127.0.0.1:27017/bibliotheque`
+- **Vercel** : définir `MONGODB_URI` (MongoDB Atlas ou autre) — obligatoire en production
+- Frontend : appels API sous **`/api`** (ex. `/api/livres`). En dev, proxy Vite → port 3000
+
+## Déploiement Vercel
+
+Voir **[docs/VERCEL.md](./docs/VERCEL.md)** (build racine + fonction serverless + `MONGODB_URI`).
 
 ## Licence
 

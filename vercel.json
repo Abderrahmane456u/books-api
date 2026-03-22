@@ -1,0 +1,18 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd frontend/atelier && npm install && npm run build",
+  "outputDirectory": "frontend/atelier/dist",
+  "installCommand": "cd backend && npm install && cd ../frontend/atelier && npm install",
+  "framework": null,
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "functions": {
+    "api/index.mjs": {
+      "memory": 1024,
+      "maxDuration": 30,
+      "includeFiles": "backend/**"
+    }
+  }
+}

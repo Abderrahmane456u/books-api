@@ -6,11 +6,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      // En dev : appels /api/* → backend (évite CORS / blocages navigateur)
+      // Dev : /api → backend (routes Express sous /api/livres, /api/categories)
       '/api': {
         target: 'http://localhost:3000',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },

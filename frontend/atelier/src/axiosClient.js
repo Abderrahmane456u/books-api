@@ -2,10 +2,8 @@
  * Client HTTP (fetch) — même usage qu'axios pour booksApi
  * Pas de dépendance axios requise
  */
-// En dev : proxy Vite (/api → localhost:3000). Sinon URL directe ou variable d’env.
-const baseURL =
-  import.meta.env.VITE_API_URL ||
-  (import.meta.env.DEV ? '/api' : 'http://localhost:3000')
+// Base API : /api (Vite proxy en dev, Vercel en prod). Surcharge : VITE_API_URL complète.
+const baseURL = import.meta.env.VITE_API_URL || '/api'
 
 async function request(method, path, options = {}) {
   let url = `${baseURL}${path}`
