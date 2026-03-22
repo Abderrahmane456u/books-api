@@ -1,0 +1,25 @@
+# Dépendances
+node_modules/
+
+# Environnement & secrets
+.env
+.env.local
+*.pem
+mongo-express-app/config.env
+
+# Build & caches
+dist/
+build/
+.cache/
+*.log
+npm-debug.log*
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Vite
+frontend/atelier/dist/

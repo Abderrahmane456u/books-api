@@ -1,0 +1,19 @@
+{
+  "name": "mongo-express-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "seed": "node scripts/seed-db.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "mongo-express": "^1.0.0",
+    "mongodb": "^6.0.0"
+  }
+}
